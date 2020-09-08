@@ -1,0 +1,34 @@
+<h1>Eat Da Burger</h1>
+
+<aside>
+    <ul>
+        {{#each burgers}}
+        <li>
+            <p>
+                {{this.id}}. {{this.burger_name}}
+                <button data-planid="{{this.id}}" class="devourMe">Devour!</button>
+            </p>
+        </li>
+        {{/each}}
+    </ul>
+</aside>
+
+<section>
+    <h2>Add a Burger</h2>
+    <form id="addBurger" class="button-size">
+        <textarea type="text" name="burger"></textarea>
+        <button type="submit">Enter Burger!</button>
+    </form>
+</section>
+
+<aside>
+    <ul>
+        {{#each burgers_devoured}}
+        <li>
+            <p>
+                {{this.id}}. {{this.burger_name}}
+            </p>
+        </li>
+        {{/each}}
+    </ul>
+</aside>
