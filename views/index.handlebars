@@ -3,12 +3,14 @@
 <aside>
     <ul>
         {{#each burgers}}
-        <li>
-            <p>
-                {{this.id}}. {{this.burger_name}}
-                <button data-planid="{{this.id}}" class="devourMe">Devour!</button>
-            </p>
-        </li>
+            {{#unless devoured}}
+                <li>
+                    <p>
+                        {{this.id}}. {{this.burger_name}}
+                        <button data-planid="{{this.id}}" class="devourMe">Devour!</button>
+                    </p>
+                </li>
+            {{/unless}}
         {{/each}}
     </ul>
 </aside>
@@ -23,12 +25,14 @@
 
 <aside>
     <ul>
-        {{#each burgers_devoured}}
-        <li>
-            <p>
-                {{this.id}}. {{this.burger_name}}
-            </p>
-        </li>
+        {{#each burgers}}
+            {{#if devoured}}
+                <li>
+                    <p>
+                        {{this.id}}. {{this.burger_name}}
+                    </p>
+                </li>
+            {{/if}}
         {{/each}}
     </ul>
 </aside>
