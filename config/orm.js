@@ -30,7 +30,7 @@ const orm = {
         queryString += ") ";
         queryString += "VALUES (";
         queryString += printQuestionMarks(vals.length);
-        queryString += ") ";
+        queryString += "); ";
 
         console.log(queryString);
 
@@ -43,14 +43,14 @@ const orm = {
     // PUT METHOD
     updateOne: function(table, valsToSet, condition, cb) {
         var queryString = "UPDATE " + table;
-        queryString += " SET ";
-        queryString += printQuestionMarks(valsToSet.length);
+        queryString += " SET ?";
         queryString += " WHERE ";
         queryString += condition;
+        queryString += ";";
 
         console.log(queryString);
 
-        connection.query(queryString, valsToSet, function(err, result) {
+        connection.query(queryString, [valsToSet], function(err, result) {
             if (err) {throw err};
             cb(result);
         });
