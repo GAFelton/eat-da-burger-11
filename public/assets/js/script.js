@@ -18,14 +18,14 @@ $(function() {
     });
 
     $(".devourMe").on("click", function(event) {
-        var id = $(this).data("id");
+        var id = $(this).data("burgerid");
 
         var burgerUpdate = {
             devoured: true
         };
 
         // Send PUT request.
-        $.ajax("/api/cats/" + id, {
+        $.ajax("/api/burgers/" + id, {
             type: "PUT",
             data: burgerUpdate
         }).then(function() {
