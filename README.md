@@ -6,7 +6,8 @@
 
   App for inputting and devouring burgers. Demonstrates understanding and application of MVC principles and uses MySQL, Node, Express and Handlebars.
 
-  
+  [Link to GitHub Repo](https://github.com/GAFelton/eat-da-burger-11)
+  [Link to Deployed Project](http://gentle-chamber-60009.herokuapp.com/)
 
   ## Table of Contents
 
