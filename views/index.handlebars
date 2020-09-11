@@ -1,40 +1,57 @@
-<h1>Eat Da Burger</h1>
 
+<div class="container">
+    <div class="row topBar">
+        <div class="column"> </div>
+        <div class="column">
+            <h1>Eat Da Burger</h1>
+        </div>
+        <div class="column"> </div>
+    </div>
+    <div class="row">
+        <div class="column">
 <aside>
-    <ul>
+    <h2>Burgers to be Eaten:</h2>
+    <dl>
         {{#each burgers}}
             {{#unless devoured}}
-                <li>
-                    <p>
-                        {{this.id}}. {{this.burger_name}}
-                        <button data-burgerid="{{this.id}}" class="devourMe">Devour!</button>
+                <dt class="clearfix">
+                    <p class="float-left">
+                        {{this.id}}. {{this.burger_name}}   
                     </p>
-                </li>
+                    <button data-burgerid="{{this.id}}" class="devourMe button-small float-right">Devour!</button>
+                </dt>
             {{/unless}}
         {{/each}}
-    </ul>
+    </dl>
 </aside>
+</div>
 
+<div class="column">
 <section>
     <img src="/assets/img/char_broiled-cheeseburger.svg" alt="Char-Broiled Cheeseburger Image.">
     <h2>Add a Burger</h2>
-    <form class="addBurger" class="button-size">
+    <form class="addBurger">
         <textarea type="text" name="burger" id="burg"></textarea>
         <button type="submit">Enter Burger!</button>
     </form>
 </section>
+</div>
 
+<div class="column">
 <aside>
     <h2>Devoured Burgers</h2>
-    <ul>
+    <dl>
         {{#each burgers}}
             {{#if devoured}}
-                <li>
+                <dt>
                     <p>
                         {{this.id}}. {{this.burger_name}}
                     </p>
-                </li>
+                </dt>
             {{/if}}
         {{/each}}
-    </ul>
+    </dl>
 </aside>
+</div>
+</div>
+</div>
