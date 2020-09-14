@@ -29,11 +29,12 @@
   
 
 
+
   ## Usage
 
   On the deployed site, add burgers via the add burger form or devour them to move them from one column to the other.
 
-
+![eat-da-burger-screenshot](.\public\assets\img\eat-da-burger-screenshot.png)
 
   ## License
 
