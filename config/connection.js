@@ -1,12 +1,13 @@
 'use strict';
 
-const util = require('util');
 const mysql = require('mysql');
 var connection;
 
+// if deployed on Heroku, use JawsDB.
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 }
+// Else, run on local connection (for development).
 else {
   connection = mysql.createConnection({
     host: 'localhost',
@@ -16,6 +17,7 @@ else {
   });
 }
 
+// Error catch for initial connection.
 connection.connect(function (err) {
   if (err) {
     console.error("error connecting: " + err.stack);
@@ -25,8 +27,6 @@ connection.connect(function (err) {
   console.log("connected as id " + connection.threadId);
 });
 
-// Setting up connection.query to use promises instead of callbacks.
-// This allows us to use the async/await syntax.
-// connection.query = util.promisify(connection.query);
 
+// Export for ORM.
 module.exports = connection;

@@ -1,11 +1,12 @@
 const express = require("express");
-
 var router = express.Router();
 
 const burger = require("../models/burger");
 
+// The Boolean value was not transferring correctly via JSON, so I added this helper function to fix what I needed.
 const convertStringBoolean = (str) => str == "true";
 
+// GET METHOD
 router.get("/", function (req, res) {
     burger.selectAll(function (data) {
         var objForHandlebars = {
@@ -16,6 +17,7 @@ router.get("/", function (req, res) {
     });
 });
 
+// POST METHOD
 router.post("/api/burgers", function (req, res) {
     const devoured = convertStringBoolean(req.body.devoured);
     burger.addBurger(
@@ -26,6 +28,8 @@ router.post("/api/burgers", function (req, res) {
         });
 });
 
+
+// UPDATE METHOD
 router.put("/api/burgers/:id", function (req, res) {
     var condition = "id = " + req.params.id;
     const devoured = convertStringBoolean(req.body.devoured);
@@ -42,4 +46,5 @@ router.put("/api/burgers/:id", function (req, res) {
     });
 });
 
+// Export for server.js.
 module.exports = router;

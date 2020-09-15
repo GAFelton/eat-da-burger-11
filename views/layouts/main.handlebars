@@ -3,16 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <title>Eat-Da-Burger!</title>
+  {{!-- Google fonts. --}}
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+  {{!-- Normalize (CSS Reset.) --}}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  {{!-- Milligram CSS Framework. --}}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css" 
   integrity="sha512-xiunq9hpKsIcz42zt0o2vCo34xV0j6Ny8hgEylN3XBglZDtTZ2nwnqF/Z/TTCc18sGdvCjbFInNd++6q3J0N6g==" crossorigin="anonymous" />
-  <link rel="stylesheet" href="/assets/css/style.css" type="css" />
+  {{!-- burger_style.css --}}
+  <link rel="stylesheet" href="/assets/css/burger_style.css" type="css" />
+  {{!-- jQuery --}}
   <script src="https://code.jquery.com/jquery.js"></script>
 </head>
 <body>
   {{{ body }}}
 
+  {{!-- script adding button handling (POST and PUT AJAX requests). --}}
   <script src="/assets/js/script.js"></script>
 </body>
 </html>

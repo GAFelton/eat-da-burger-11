@@ -1,6 +1,7 @@
-
+{{!-- Using Milligram CSS Framework. --}}
 <div class="container">
     <div class="row topBar">
+        {{!-- Empty columns align title above center column. --}}
         <div class="column"> </div>
         <div class="column">
             <h1>Eat Da Burger</h1>
@@ -9,49 +10,52 @@
     </div>
     <div class="row">
         <div class="column">
-<aside>
-    <h2>Burgers to be Eaten:</h2>
-    <dl>
-        {{#each burgers}}
-            {{#unless devoured}}
-                <dt class="clearfix">
-                    <p class="float-left">
-                        {{this.id}}. {{this.burger_name}}   
-                    </p>
-                    <button data-burgerid="{{this.id}}" class="devourMe button-small float-right">Devour!</button>
-                </dt>
-            {{/unless}}
-        {{/each}}
-    </dl>
-</aside>
-</div>
+            {{!-- Left side of page - list of burgers not yet devoured. --}}
+            <aside>
+                <h2>Burgers to be Eaten:</h2>
+                <dl>
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    <dt class="clearfix">
+                        <p class="float-left">
+                            {{this.id}}. {{this.burger_name}}
+                        </p>
+                        <button data-burgerid="{{this.id}}" class="devourMe button-small float-right">Devour!</button>
+                    </dt>
+                    {{/unless}}
+                    {{/each}}
+                </dl>
+            </aside>
+        </div>
 
-<div class="column">
-<section>
-    <img src="/assets/img/char_broiled-cheeseburger.svg" alt="Char-Broiled Cheeseburger Image.">
-    <h2>Add a Burger</h2>
-    <form class="addBurger">
-        <textarea type="text" name="burger" id="burg"></textarea>
-        <button type="submit">Enter Burger!</button>
-    </form>
-</section>
-</div>
+        {{!-- Center of page - Hero Image and burger input form. --}}
+        <div class="column">
+            <section>
+                <img src="/assets/img/char_broiled-cheeseburger.svg" alt="Char-Broiled Cheeseburger Image.">
+                <h2>Add a Burger</h2>
+                <form class="addBurger">
+                    <textarea type="text" name="burger" id="burg"></textarea>
+                    <button type="submit">Enter Burger!</button>
+                </form>
+            </section>
+        </div>
 
-<div class="column">
-<aside>
-    <h2>Devoured Burgers</h2>
-    <dl>
-        {{#each burgers}}
-            {{#if devoured}}
-                <dt>
-                    <p>
-                        {{this.id}}. {{this.burger_name}}
-                    </p>
-                </dt>
-            {{/if}}
-        {{/each}}
-    </dl>
-</aside>
-</div>
-</div>
+        {{!-- Right side of page - burgers that have been devoured. --}}
+        <div class="column">
+            <aside>
+                <h2>Devoured Burgers</h2>
+                <dl>
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <dt>
+                        <p>
+                            {{this.id}}. {{this.burger_name}}
+                        </p>
+                    </dt>
+                    {{/if}}
+                    {{/each}}
+                </dl>
+            </aside>
+        </div>
+    </div>
 </div>

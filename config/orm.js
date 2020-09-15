@@ -1,6 +1,6 @@
 const connection = require("./connection");
 
-// Helper function for printing the correct number of question marks.
+// Helper function for printing the correct number of question marks in SQL query.
 function printQuestionMarks(num) {
     var arr = [];
   
@@ -12,7 +12,7 @@ function printQuestionMarks(num) {
   }
 
 const orm = {
-    // GET METHOD
+    // READ METHOD
     selectAll: function (tableName, cb) {
         var queryString = "SELECT * FROM " + tableName + ";";
         connection.query(queryString, function (err, result) {
@@ -21,7 +21,7 @@ const orm = {
         });
     },
 
-    // POST METHOD
+    // CREATE METHOD
     insertOne: function(table, cols, vals, cb) {
         var queryString = "INSERT INTO " + table;
 
@@ -40,7 +40,7 @@ const orm = {
         });
     },
 
-    // PUT METHOD
+    // UPDATE METHOD
     updateOne: function(table, valsToSet, condition, cb) {
         var queryString = "UPDATE " + table;
         queryString += " SET ?";
@@ -58,4 +58,5 @@ const orm = {
 
 };
 
+// Exports for the model.
 module.exports = orm;
